@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockxan | Seguridad Jurídica para la Creación con IA</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+        :root {
+            --color-primary: #005A9C;
+            --color-dark: #121a2d;
+            --color-text: #333;
+            --color-text-light: #5f6c7b;
+            --color-background: #ffffff;
+            --color-background-alt: #f8f9fa;
+            --color-accent: #00BFFF;
+            --border-radius: 8px;
+            --shadow: 0 5px 20px rgba(0,0,0,0.07);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Encabezado y Navegación --- */
+        .main-header {
+            background-color: var(--color-background);
+            padding: 15px 0; /* Un poco menos de padding para ajustar con el logo */
+            border-bottom: 1px solid #e9ecef;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            text-decoration: none;
+        }
+        
+        /* --- ESTILO AÑADIDO PARA EL LOGO --- */
+        .logo img {
+            height: 45px; /* Altura del logo */
+            width: auto; /* El ancho se ajusta automáticamente */
+            vertical-align: middle; /* Asegura una buena alineación vertical */
+        }
+        /* --- FIN DEL ESTILO AÑADIDO --- */
+
+        .main-nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 500;
+        }
+
+        .cta-button {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #004170;
+        }
+
+        /* --- Sección Hero --- */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            background-color: var(--color-background-alt);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--color-dark);
+            margin: 0 0 20px;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            max-width: 750px;
+            margin: 0 auto 30px;
+            color: var(--color-text-light);
+        }
+
+        /* --- Secciones Generales --- */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--color-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        /* --- Sección de Problemas --- */
+        #problema {
+            background-color: var(--color-background);
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .problem-card {
+            padding: 30px;
+            border: 1px solid #e9ecef;
+            border-radius: var(--border-radius);
+        }
+
+        .problem-card h3 {
+            font-size: 1.4rem;
+            color: var(--color-primary);
+        }
+        
+        .problem-card .icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--color-primary);
+        }
+
+        /* --- Sección de Solución (Blockxan) --- */
+        #solucion {
+            background-color: var(--color-background-alt);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--color-background);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            overflow: hidden; 
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .feature-card-content {
+            padding: 30px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            color: var(--color-primary);
+            margin-top: 0;
+        }
+
+        /* --- Sección "Cómo Funciona" --- */
+        .how-it-works-steps {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            text-align: center;
+        }
+
+        .step {
+            flex: 1;
+        }
+        
+        .step .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--color-primary);
+            color: white;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        /* --- Sección CTA Final --- */
+        .cta-section {
+            background-color: var(--color-dark);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        /* --- Footer --- */
+        .main-footer {
+            background-color: var(--color-background-alt);
+            color: var(--color-text-light);
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid #e9ecef;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="images/logo.png" alt="Logo de Blockxan">
+            </a>
+            <nav class="main-nav">
+                <a href="#problema">El Problema</a>
+                <a href="#solucion">Nuestra Solución</a>
+                <a href="#como-funciona">Cómo Funciona</a>
+                <a href="#cta" class="cta-button">Solicitar Demo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Seguridad Jurídica para la Creación con IA</h1>
+                <p class="subtitle">La primera plataforma de registro blockchain estandarizada para certificar la autoría, originalidad y el entrenamiento ético de obras generadas por Inteligencia Artificial. Innova con confianza, protege tu creatividad.</p>
+                <a href="#cta" class="cta-button" style="padding: 15px 30px; font-size: 1.1rem;">Únete a Nuestro Programa Piloto</a>
+            </div>
+        </section>
+
+        <section id="problema" class="section">
+            <div class="container">
+                <h2 class="section-title">El Desafío de la Creatividad en la Era Digital</h2>
+                <p class="section-subtitle">La IA generativa está revolucionando la creación, pero también genera una profunda inseguridad jurídica que frena la innovación. Estos son los retos que los creadores y desarrolladores enfrentan hoy.</p>
+                <div class="problems-grid">
+                    <div class="problem-card">
+                        <div class="icon">?</div>
+                        <h3>Autoría Incierta</h3>
+                        <p>La creciente autonomía de la IA cuestiona los conceptos tradicionales de autoría. La opacidad de los modelos dificulta probar la contribución humana.</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="icon">!</div>
+                        <h3>Originalidad Cuestionada</h3>
+                        <p>Sin una "impronta personal" demostrable, las obras generadas por IA carecen de la originalidad subjetiva necesaria para su protección. Probar las decisiones creativas es casi imposible.</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="icon">©</div>
+                        <h3>Entrenamiento Opaco</h3>
+                        <p>Los modelos de IA se entrenan con millones de obras protegidas, a menudo sin autorización, constituyendo una infracción de los derechos de propiedad intelectual. Falta transparencia y un mecanismo de compensación.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solucion" class="section">
+            <div class="container">
+                <h2 class="section-title">Blockxan: Transparencia, Inmutabilidad, Confianza</h2>
+                <p class="section-subtitle">Proponemos un registro multifuncional y estandarizado basado en blockchain que actúa como un fedatario tecnológico, aportando la seguridad jurídica que el ecosistema de la IA creativa necesita para prosperar.</p>
+                <div class="features-grid">
+                    
+                    <div class="feature-card">
+                        <img src="images/autoria.jpg" alt="Ilustración abstracta sobre la autoría y la identidad digital">
+                        <div class="feature-card-content">
+                            <h3>Certificación de Autoría Humana</h3>
+                            <p>Nuestra plataforma se integra en los sistemas de IA para actuar como una "caja negra" que documenta cada instrucción (prompt), ajuste y decisión creativa, creando una pista de auditoría inmutable que prueba la intervención humana determinante.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <img src="images/originalidad.jpg" alt="Imagen conceptual representando una idea original y única">
+                        <div class="feature-card-content">
+                            <h3>Prueba de Originalidad</h3>
+                            <p>Registra de forma cronológica la evolución del trabajo, desde la idea hasta el resultado final. Este "diario creativo" demuestra que la obra no es un producto del azar, sino el reflejo de la "impronta personal" del autor, superando la barrera de la originalidad.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <img src="images/entrenamiento.jpg" alt="Visualización de redes de datos para el entrenamiento de IA">
+                        <div class="feature-card-content">
+                            <h3>Gestión Ética del Entrenamiento</h3>
+                            <p>Creamos un inventario auditable de los datos de entrenamiento mediante hashes criptográficos. Esto permite a los titulares verificar el uso de sus obras y facilita la gestión y el pago automatizado de licencias a través de smart contracts, fomentando un mercado de datos transparente y justo.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="como-funciona" class="section">
+            <div class="container">
+                <h2 class="section-title">Un Proceso Sencillo y Robusto</h2>
+                <p class="section-subtitle">Nuestra solución está diseñada para integrarse de forma fluida en el flujo de trabajo de artistas y desarrolladores, ofreciendo máxima seguridad con mínima fricción.</p>
+                <div class="how-it-works-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Integración en Plataformas</h3>
+                        <p>Los desarrolladores de IA incorporan nuestro sistema homologado por organismos como la OMPI en sus herramientas creativas.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Registro en Tiempo Real</h3>
+                        <p>Mientras el artista crea, cada interacción significativa queda registrada y anclada a la blockchain, generando una evidencia con sellado de tiempo (timestamping).</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Certificación Verificable</h3>
+                        <p>Al finalizar, se emite un certificado digital único que resume todo el proceso creativo y que sirve como prueba irrefutable ante cualquier registro u organismo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="cta-section">
+            <div class="container">
+                <h2>Construyamos Juntos el Futuro de la Propiedad Intelectual</h2>
+                <p>Si eres un artista, desarrollador de IA o una institución interesada en fomentar un ecosistema creativo ético y seguro, contacta con nosotros. Estamos buscando socios para nuestro programa piloto.</p>
+                <a href="mailto:contacto@blockxan.dev" class="cta-button" style="padding: 15px 30px; font-size: 1.1rem; background-color: var(--color-accent); color: var(--color-dark);">Solicita una Demo</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Blockxan. Todos los derechos reservados.</p>
+            <p style="font-size: 0.8rem; opacity: 0.7;">Propuesta conceptual basada en el TFM "BLOCKCHAIN COMO HERRAMIENTA EN EL PROCESO DE CREACIÓN DE OBRAS DE ARTE A TRAVÉS DE INTELIGENCIA ARTIFICIAL" de Xan Paz Guerreiro.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
